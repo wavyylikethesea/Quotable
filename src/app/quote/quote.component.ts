@@ -13,10 +13,16 @@ export class QuoteComponent implements OnInit {
     new Quote(2,'The greatest human act is to inspire', '- Nipsey Hussle'),
 
   ];
-  
+
   toggleDetails(index: number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
+
+  completeGoal(isComplete, index){
+    if (isComplete) {
+      this.quotes.splice(index,1);
+    }
+  }  
 
   constructor() { }
 
