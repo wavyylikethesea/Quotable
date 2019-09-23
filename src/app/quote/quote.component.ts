@@ -8,10 +8,14 @@ import { Quote } from '../quote'
 })
 export class QuoteComponent implements OnInit {
 
-  quotes:Quote[] = [
-    {id:1, name:'Find your purpose or you wastin air', description:'By Nipsey Hussle'},
-    {id:2, name:'Greatest human act is to inspire', description:'By Nipsey Hussle'},
-  ]
+  quotes: Quote[] = [
+    new Quote(1, 'Find your purpose or you wasting air', '- Nipsey Hussle'),
+    new Quote(2,'The greatest human act is to inspire','- Nipsey Hussle'),
+
+  ];
+  toggleDetails(index){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
+  }
 
   constructor() { }
 
