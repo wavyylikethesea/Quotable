@@ -4,7 +4,7 @@
     <form #goalForm='ngForm'>
         <div class="form-group">
   
-            <label for="publisher">Your Name</label>
+            <label for="publisher">Publisher Name:</label>
             <input type="text" required class="form-control" id="publisher" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel">
 
             <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
@@ -16,14 +16,23 @@
         </div>
         <div class="form-group">
   
-            <label for="author">Author Name</label>
+            <label for="author">Author Name:</label>
             <textarea class="form-control" id="author" rows="2" required [(ngModel)]="newQuote.author" name="author" #author="ngModel"></textarea>
+
+            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                <p>Author name is required</p>
+
+            </div>
   
         </div>
         <div class="form-group">
-            <label for="quote">Quote</label>
-            <textarea class="form-control" id="quoteWords" rows="8" required [(ngModel)]="newQuote.quoteWords" #quoteWords="ngModel"></textarea>
+            <label for="quote">Quote:</label>
+            <textarea class="form-control" id="quoteWords" rows="8" [(ngModel)]="newQuote.quoteWords" name="quoteWords" #quoteWords="ngModel" required></textarea>
+                <div [hidden]="quoteWords.valid || quoteWords.pristine" class="alert alert-danger">
+                  <p>Write a quote that you wanted to add</p>
+            </div>
   
         </div>
+        <button type="submit" class="btn btn-outline-success">Add Quote</button>
     </form>
   </div>
