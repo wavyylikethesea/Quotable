@@ -1,22 +1,28 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new quote</h2>
     <br><hr><br>
-    <form>
+    <form #goalForm='ngForm'>
         <div class="form-group">
   
-            <label for="name">Quote</label>
-            <input type="text" required class="form-control" id="name">
+            <label for="publisher">Your Name</label>
+            <input type="text" required class="form-control" id="publisher" [(ngModel)]="newQuote.publisher" name="publisher" #publisher="ngModel">
+
+            <div [hidden]="publisher.valid || publisher.pristine" class="alert alert-danger">
+                <p>Publisher name is required</p>
+
+            </div>
+
   
         </div>
         <div class="form-group">
   
-            <label for="description">Author</label>
-            <textarea class="form-control" id="author" rows="4" required></textarea>
+            <label for="author">Author Name</label>
+            <textarea class="form-control" id="author" rows="2" required [(ngModel)]="newQuote.author" name="author" #author="ngModel"></textarea>
   
         </div>
         <div class="form-group">
-            <label for="description">Entrant</label>
-            <textarea class="form-control" id="entrant" rows="4" required></textarea>
+            <label for="quote">Quote</label>
+            <textarea class="form-control" id="quoteWords" rows="8" required [(ngModel)]="newQuote.quoteWords" #quoteWords="ngModel"></textarea>
   
         </div>
     </form>
