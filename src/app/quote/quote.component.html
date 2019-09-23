@@ -4,7 +4,8 @@
     <div *ngFor='let quote of quotes; let i = index'>
       <h5>{{quote.name}}</h5>
       <button (click)='toggleDetails(i)'>View Details</button>
-      <app-quote-details *ngIf='quote.showDescription' [quote]='quote'></app-quote-details>
+
+      <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeGoal($event,i)'></app-quote-details>
       
     </div>
   </div>
