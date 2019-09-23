@@ -10,10 +10,11 @@ export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
     new Quote(1, 'Find your purpose or you wasting air', '- Nipsey Hussle'),
-    new Quote(2,'The greatest human act is to inspire','- Nipsey Hussle'),
+    new Quote(2,'The greatest human act is to inspire', '- Nipsey Hussle'),
 
   ];
-  toggleDetails(index){
+  
+  toggleDetails(index: number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
 
