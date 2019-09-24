@@ -9,10 +9,10 @@ import { Quote } from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'The only true wisdom is in knowing you know nothing.', '- Socrates', new Date(2018, 11, 24, 10, 33, 30, 0), 0, 0),
-    new Quote(2,'The greatest human act is to inspire', '- Nipsey Hussle', new Date(2018, 12, 25, 8, 30, 50, 0), 0, 0),
-    new Quote(3,'But man is not made for defeat. A man can be destroyed but not defeated.', '- Ernest Hemingway', new Date(2019, 1, 2, 11, 20, 12, 0), 0, 0),
-    new Quote(4,'When you reach the end of your rope, tie a knot in it and hang on.', '- Franklin D. Roosevelt', new Date(2019, 2, 2, 5, 40, 50, 0), 0, 0),
+    new Quote(1, 'The only true wisdom is in knowing you know nothing.', 'Nehru Oneil', ' Socrates', new Date(2018, 11, 24, 10, 33, 30, 0), 0, 0),
+    new Quote(1,'The greatest human act is to inspire', 'Thomas Maghanga' ,' Nipsey Hussle', new Date(2018, 12, 25, 8, 30, 50, 0), 0, 0),
+    new Quote(1,'But man is not made for defeat. A man can be destroyed but not defeated.', 'Mutuma Kerubo' , ' Ernest Hemingway', new Date(2019, 1, 2, 11, 20, 12, 0), 0, 0),
+    new Quote(1,'When you reach the end of your rope, tie a knot in it and hang on.', 'Kayla Makena' , ' Franklin D. Roosevelt', new Date(2019, 2, 2, 5, 40, 50, 0), 0, 0),
   ];
 
 

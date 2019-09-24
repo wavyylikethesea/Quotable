@@ -2,28 +2,26 @@
     <h1>QUOTABLE</h1>
     <br><hr><br>
 
-
-    <div *ngFor='let quote of quotes; let i = index'>
+   
+    <div class="jumbotron" *ngFor='let quote of quotes; let i = index'>
       <h5>{{quote.name}}</h5>
       <button class="btn btn-success" (click)='toggleDetails(i)'>View Details</button>
 
 
-      <p class="quote" *ngIf="i == quotesIndex; else dontHighlight" appHighlight><span class="quoteWords">"{{quote.quoteWords}}"</span> - {{quote.author|uppercase}}</p>
+      <p class="quote" *ngIf="i == quotesIndex; else dontHighlight" appHighlight><span class="quoteWords">"{{quote.name}}"</span>-{{quote.description|uppercase}}</p>
         <ng-template #dontHighlight>
-          <p class="quote"> <span class="quoteWords">"{{quote.quoteWords}}"</span> - {{quote.author|uppercase}}</p>
         </ng-template>
 
       <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeGoal($event,i)'></app-quote-details>
 
       <p>
-
         <button class="btn" type="button" name="like" (click)=upVote(i) (click)="calculateHighestVotes()"><img id="like" src="assets/img/thumbsUpSign.png" alt="button to like"></button>
         <button class="btn" type="button" name="dislike" (click)=downVote(i)><img id="dislike" src="assets/img/thumbsDownSign.png" alt="button to dislike"></button>
       </p>
       <p>UpVotes:{{quote.upVotes}} | DownVotes:{{quote.downVotes}}</p>
       
     </div><br><hr><br>
-    <div class="col-md-6">
+    <div class="jumbotron">
         <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
   </div>

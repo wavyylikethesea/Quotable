@@ -17,9 +17,9 @@
         <div class="form-group">
   
             <label for="author">Author Name:</label>
-            <textarea class="form-control" id="author" rows="2" required [(ngModel)]="newQuote.author" name="author" #author="ngModel"></textarea>
+            <textarea class="form-control" id="description" rows="2" required [(ngModel)]="newQuote.description" name="author" #description="ngModel"></textarea>
 
-            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+            <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
                 <p>Author name is required</p>
 
             </div>
@@ -27,8 +27,8 @@
         </div>
         <div class="form-group">
             <label for="quote">Quote:</label>
-            <textarea class="form-control" id="quoteWords" rows="8" [(ngModel)]="newQuote.quoteWords" name="quoteWords" #quoteWords="ngModel" required></textarea>
-                <div [hidden]="quoteWords.valid || quoteWords.pristine" class="alert alert-danger">
+            <textarea class="form-control" id="name" rows="8" [(ngModel)]="newQuote.name" name="quoteWords" #name="ngModel" required></textarea>
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                   <p>Write a quote that you wanted to add</p>
             </div>
   
