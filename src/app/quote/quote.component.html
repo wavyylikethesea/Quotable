@@ -8,10 +8,16 @@
       <button class="btn btn-success" (click)='toggleDetails(i)'>View Details</button>
 
       <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isComplete) = 'completeGoal($event,i)'></app-quote-details>
+
+      <p>
+
+        <button class="btn" type="button" name="like" (click)=upVote(i) (click)="calculateHighestVotes()"><img id="like" src="assets/img/thumbsUpSign.png" alt="button to like"></button>
+        <button class="btn" type="button" name="dislike" (click)=downVote(i)><img id="dislike" src="assets/img/thumbsDownSign.png" alt="button to dislike"></button>
+      </p>
+      <p>UpVotes:{{quote.upVotes}} | DownVotes:{{quote.downVotes}}</p>
       
     </div><br><hr><br>
     <div class="col-md-6">
-        <app-quote-form></app-quote-form>
-
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
   </div>
